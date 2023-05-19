@@ -58,7 +58,7 @@ const Game = () => {
 
   const handlePlay = (nextSquares) => {
     setHistory([...history, nextSquares]);
-    setXIsNext[!xIsNext];
+    setXIsNext(!xIsNext);
   };
 
   return (
