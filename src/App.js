@@ -54,6 +54,7 @@ const Board = ({ xIsNext, squares, onPlay }) => {
 const Game = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [currentMove, setCurrentMove] = useState(0);
   const currentSquares = history[history.length - 1];
 
   const handlePlay = (nextSquares) => {
@@ -62,7 +63,8 @@ const Game = () => {
   };
 
   const jumpTo = (nextMove) => {
-    // TODO
+    setCurrentMove(nextMove);
+    setXIsNext(nextMove % 2 === 0);
   };
 
   const moves = history.map((squares, move) => {
